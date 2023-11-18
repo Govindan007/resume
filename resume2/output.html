@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Resume Output</title>
+    <link rel="stylesheet" href="styleoutput.css">
+</head>
+<body>
+
+<center>
+<h1><b>Your Resume</b></h1>
+</center>
+
+<div class="resumeOutput">
+   
+</div>
+
+<script>
+    window.onload = function() {
+       
+        var urlParams = new URLSearchParams(window.location.search);
+
+        
+        var fullName = urlParams.get('fullName');
+        
+        var qualifications = urlParams.get('qualifications');
+        
+        var skills = urlParams.get('skills');
+       
+        var tagline = urlParams.get('tagline');
+       
+        var age = urlParams.get('age');
+       
+        var experience = urlParams.get('experience');
+       
+        var awards = urlParams.get('awards');
+       
+        var hobbies = urlParams.get('hobbies');
+
+       
+        var resumeContent = `
+            <h1>${fullName}</h1>
+            <p><h2><b>I,am a professional,</b><br><h2> ${tagline}</p>
+            <h2><p><b>I'am </b> ${age} years old</p></h2>
+            <h2><b>My Qualifications Are ,
+            <p>${qualifications}</p></b></h2>
+            <h2><b>I'am Skilled At,
+            <p>${skills}</p></b></h2>
+            <h2><b>My Work Experience Are,
+            <p>${experience}</p></b></h2>
+            <h2><b>My Awards and Honors Are,
+            <p>${awards}</p></b></h2>
+            <h2><b>My Hobbies Are,
+            <p>${hobbies}</p></b></h2>
+        `;
+
+        document.querySelector('.resumeOutput').innerHTML = resumeContent;
+    };
+</script>
+
+</body>
+</html>
+
+
